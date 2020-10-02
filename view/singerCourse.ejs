@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>habd</title>
+</head>
+<body>
+  <h3>name: <%= course.name %> </h3>
+  <H4>tags:</H4>
+  <ul>
+    
+    <% for(let t of course.tags){ %>
+      <li><%= t %></li> 
+    <% } %>  
+  </ul>
+  <p>author: <%= course.author %> </p>
+  <p>isPublished: <%= course.isPublished %> </p>
+  <form action="/edit/<%=course._id%>" method="GET">
+    <input type="submit" value="edit">
+  </form>
+  <form action="/remove/<%=course._id%>" method="GET">
+    <input type="submit" value="remove">
+  </form>
+</body>
+</html>
